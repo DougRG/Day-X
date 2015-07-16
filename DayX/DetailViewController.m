@@ -7,8 +7,13 @@
 //
 
 #import "DetailViewController.h"
+#import "EntryController.h"
 
-@interface DetailViewController ()
+
+@interface DetailViewController () <UITextFieldDelegate>
+
+@property (strong, nonatomic) IBOutlet UITextField *textField;
+@property (strong, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
@@ -16,7 +21,52 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self updateWithEntry:self.entry];
+    
+    
+}
+
+    -(BOOL) textFieldShouldReturn:(UITextField *)textField {
+        
+       [self.textField resignFirstResponder];
+        
+        
+        return YES;
+    }
     // Do any additional setup after loading the view.
+
+-(IBAction)clearButtonTapped   :(id)sender{
+    self.textField.text = @"";
+    self.textView.text = @"";
+}
+
+- (IBAction)saveButtonTapped:(id)sender {
+    if (self.entry) {
+        self.entry.title = self.textField.text;
+        self.entry.bodyText = self.textView.text;
+        self.entry.timeStamp = [NSDate date];
+    } else {
+        Entry *entry = [Entry new];
+        entry.title = self.textField.text;
+        entry.bodyText = self.textView.text;
+        [[EntryController sharedInstance] addEntry:entry];
+        
+        
+        
+        //[self.textField resignFirstResponder];
+        
+    }
+    
+    [self.navigationController  popToRootViewControllerAnimated:YES];
+
+    }
+
+-(void)updateWithEntry:(Entry *)entry {
+    self.textField.text = entry.title;
+    self.textView.text = entry.bodyText;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,3 +85,4 @@
 */
 
 @end
+

@@ -36,8 +36,11 @@
                                     <outlet property="dataSource" destination="FUj-GN-Vqu" id="QLl-zW-RZ6"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="td3-x7-nMx">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="td3-x7-nMx">
                                 <rect key="frame" x="142" y="0.0" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="0xW-ae-YyK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -45,7 +48,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="i5F-Qs-Dyc" firstAttribute="leading" secondItem="3tL-Pg-K81" secondAttribute="leading" id="GVV-kT-LTu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="td3-x7-nMx" secondAttribute="trailing" constant="65" id="IQ3-Qz-6VD"/>
                             <constraint firstItem="i5F-Qs-Dyc" firstAttribute="top" secondItem="3tL-Pg-K81" secondAttribute="top" id="Xdp-2b-GeO"/>
+                            <constraint firstItem="td3-x7-nMx" firstAttribute="top" secondItem="i5F-Qs-Dyc" secondAttribute="top" id="cKn-S0-wOG"/>
                             <constraint firstAttribute="trailing" secondItem="i5F-Qs-Dyc" secondAttribute="trailing" id="spg-ZK-UgZ"/>
                             <constraint firstItem="gDI-PC-8MI" firstAttribute="top" secondItem="i5F-Qs-Dyc" secondAttribute="bottom" constant="199" id="t2g-Ur-sRi"/>
                         </constraints>
@@ -58,6 +63,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="i5F-Qs-Dyc" id="JPo-Kc-ytP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DeL-jF-jyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="FUj-GN-Vqu" customClass="ListTableViewDataSource"/>
@@ -82,8 +90,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYu-bi-aEe">
-                                <rect key="frame" x="137" y="430" width="62" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYu-bi-aEe">
+                                <rect key="frame" x="16" y="83" width="62" height="30"/>
                                 <state key="normal" title="Clear">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -91,7 +99,7 @@
                                     <action selector="clearButtonTapped:" destination="ye0-YL-OrS" eventType="touchUpInside" id="kjJ-ne-RYL"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kdY-VF-3rL">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kdY-VF-3rL">
                                 <rect key="frame" x="112" y="84" width="97" height="30"/>
                                 <color key="backgroundColor" red="0.35430536824135705" green="0.63681010546441175" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -102,15 +110,28 @@
                                 </connections>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.98431372549019602" green="0.6452849879792727" blue="0.2999082215998633" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="blD-7G-tCT" firstAttribute="centerY" secondItem="ntt-wS-XrG" secondAttribute="centerY" id="2Xr-4p-UDA"/>
-                            <constraint firstItem="blD-7G-tCT" firstAttribute="centerX" secondItem="kdY-VF-3rL" secondAttribute="centerX" id="Ktp-GK-eYW"/>
-                            <constraint firstItem="blD-7G-tCT" firstAttribute="top" secondItem="2au-5V-eMT" secondAttribute="bottom" constant="112" id="MBl-YJ-cdp"/>
-                            <constraint firstItem="blD-7G-tCT" firstAttribute="centerX" secondItem="ntt-wS-XrG" secondAttribute="centerX" id="TfF-md-ncG"/>
-                            <constraint firstItem="blD-7G-tCT" firstAttribute="leading" secondItem="ntt-wS-XrG" secondAttribute="leadingMargin" constant="24" id="TjG-8X-MlM"/>
+                            <constraint firstItem="kdY-VF-3rL" firstAttribute="centerX" secondItem="ntt-wS-XrG" secondAttribute="centerX" id="77y-S1-brS"/>
+                            <constraint firstItem="aYu-bi-aEe" firstAttribute="top" secondItem="2au-5V-eMT" secondAttribute="bottom" constant="19" id="Afa-e3-oeR"/>
+                            <constraint firstItem="kdY-VF-3rL" firstAttribute="leading" secondItem="aYu-bi-aEe" secondAttribute="trailing" constant="34" id="BOK-56-t9V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kdY-VF-3rL" secondAttribute="trailing" constant="95" id="XGP-o3-4tj"/>
+                            <constraint firstItem="aYu-bi-aEe" firstAttribute="leading" secondItem="ntt-wS-XrG" secondAttribute="leadingMargin" id="bLG-8B-WRO"/>
+                            <constraint firstItem="blD-7G-tCT" firstAttribute="top" secondItem="aYu-bi-aEe" secondAttribute="bottom" constant="63" id="ejj-ka-O4F"/>
+                            <constraint firstItem="blD-7G-tCT" firstAttribute="centerY" secondItem="ntt-wS-XrG" secondAttribute="centerY" id="ggZ-gl-NJD"/>
+                            <constraint firstItem="kdY-VF-3rL" firstAttribute="centerX" secondItem="blD-7G-tCT" secondAttribute="centerX" id="i7K-0d-fAI"/>
+                            <constraint firstItem="aYu-bi-aEe" firstAttribute="baseline" secondItem="kdY-VF-3rL" secondAttribute="baseline" id="khb-8E-1je"/>
+                            <constraint firstItem="blD-7G-tCT" firstAttribute="top" secondItem="kdY-VF-3rL" secondAttribute="bottom" constant="62" id="lij-VS-VeV"/>
+                            <constraint firstItem="blD-7G-tCT" firstAttribute="leading" secondItem="ntt-wS-XrG" secondAttribute="leadingMargin" constant="24" id="sZk-L7-kCT"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="RuC-BE-llf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="6x6-px-nLr">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="ye0-YL-OrS" id="Wlp-Lt-NXP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="textField" destination="kdY-VF-3rL" id="xuE-9W-yW6"/>
@@ -119,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IDc-q7-4wU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1932" y="330"/>
+            <point key="canvasLocation" x="-1977" y="330"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FOO-VM-e29">
@@ -140,6 +161,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yoN-re-G97"/>
+        <segue reference="uQh-Sv-SpA"/>
     </inferredMetricsTieBreakers>
 </document>
