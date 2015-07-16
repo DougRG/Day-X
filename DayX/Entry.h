@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+static const NSString *titleKey = @"titleKey";
+static const NSString *timeStampKey = @"timeStampKey";
+static const NSString *bodyTextKey = @"bodyTextKey";
+
 @interface Entry : NSObject
 
 @property (strong, nonatomic) NSString *title;
@@ -15,8 +19,8 @@
 @property (strong, nonatomic) NSDate *timeStamp;
 
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
-
-
+- (NSDictionary *)dictionaryRepresentation;
 
 @end

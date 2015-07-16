@@ -24,10 +24,8 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"entryCell" forIndexPath:indexPath];
     
-    
     cell.textLabel.text = entry.title;
     
-
     return cell;
 }
 

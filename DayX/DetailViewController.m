@@ -54,13 +54,17 @@
         
         
         
+        
+        
         //[self.textField resignFirstResponder];
         
     }
     
+    [[EntryController sharedInstance] save];
+    
     [self.navigationController  popToRootViewControllerAnimated:YES];
-
-    }
+    
+}
 
 -(void)updateWithEntry:(Entry *)entry {
     self.textField.text = entry.title;

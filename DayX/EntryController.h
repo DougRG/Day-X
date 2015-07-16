@@ -15,10 +15,15 @@
 
 + (EntryController *)sharedInstance;
 
--(void)addEntry:(Entry *)entry;
+- (void)addEntry:(Entry *)entry;
 
--(void)removeEntry:(Entry *)entry;
+- (void)removeEntry:(Entry *)entry;
 
+- (void)saveToPersistentStorage;
+
+- (void)save;
+
+- (void)loadFromPersistentStorage;
 
 
 
