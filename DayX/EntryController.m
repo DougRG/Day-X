@@ -18,7 +18,6 @@ static NSString *allEntriesKey = @"allEntriesKey";
 @end
 
 
-
 @implementation EntryController
 
 + (EntryController *)sharedInstance {
